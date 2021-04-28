@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using MySql.Data.MySqlClient;
+
 namespace Aula04_ProjetoMercado.Model
 {
     class ClientModel
@@ -41,10 +43,38 @@ namespace Aula04_ProjetoMercado.Model
 
         public static bool save(ClientModel newClient)
         {
+           
 
+            marketProject.Utils.DB database = new marketProject.Utils.DB();
 
+            string query = "INSERT INTO client (name, address, district, city, state, zip, " +
+                            "phone, cpf, rg) VALUES (@name, @address, @district, @city, " +
+                            "@state, @zip, @phone, @cpf, @rg);";
 
-            return false;
+            //Building Query preventing SQL Injection
+            List<MySqlParameter> content = new List<MySqlParameter>();
+
+            content.Add(new MySqlParameter("@name", MySqlDbType.String));
+            content.Add(new MySqlParameter("@address", MySqlDbType.String));
+            content.Add(new MySqlParameter("@district", MySqlDbType.String));
+            content.Add(new MySqlParameter("@city", MySqlDbType.String));
+            content.Add(new MySqlParameter("@state", MySqlDbType.String));
+            content.Add(new MySqlParameter("@zip", MySqlDbType.String));
+            content.Add(new MySqlParameter("@phone", MySqlDbType.String));
+            content.Add(new MySqlParameter("@cpf", MySqlDbType.String));
+            content.Add(new MySqlParameter("@rg", MySqlDbType.String));
+
+            content[0].Value = newClient.name;
+            content[1].Value = newClient.address;
+            content[2].Value = newClient.district;
+            content[3].Value = newClient.city;
+            content[4].Value = newClient.state;
+            content[5].Value = newClient.zip;
+            content[6].Value = newClient.phone;
+            content[7].Value = newClient.cpf;
+            content[8].Value = newClient.rg;
+
+            return database.insert(query, content);
         }
 
         public static bool edit(ClientModel whichClient)
@@ -59,6 +89,13 @@ namespace Aula04_ProjetoMercado.Model
 
 
             return false;
+        }
+
+        public static System.Data.DataTable search()
+        {
+            marketProject.Utils.DB database = new marketProject.Utils.DB();
+            string query = "SELECT * FROM client;";
+            return database.search(query, null);
         }
     }
 }

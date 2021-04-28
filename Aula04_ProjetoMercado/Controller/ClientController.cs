@@ -74,8 +74,10 @@ namespace Aula04_ProjetoMercado.Controller
         public static void remove () { }
 
         //List
-        public static void startList () { }
-        public static void closeList () { }
-        public static void list () { }
+        public static void list(System.Windows.Forms.DataGridView visualElement)
+        {
+            //Searching on model the informations registered on DB and returning a visual element response
+            visualElement.DataSource = ClientModel.search();
+        }
     }
 }

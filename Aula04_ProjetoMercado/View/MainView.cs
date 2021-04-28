@@ -23,5 +23,10 @@ namespace Aula04_ProjetoMercado
         {
             ClientController.startRegister();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ClientController.list(dataGridView1);
+        }
     }
 }
