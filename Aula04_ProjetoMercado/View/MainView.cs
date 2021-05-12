@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using marketProject.Controller;
+
 using Aula04_ProjetoMercado.Controller;
 
 namespace Aula04_ProjetoMercado
@@ -27,6 +29,11 @@ namespace Aula04_ProjetoMercado
         private void button1_Click(object sender, EventArgs e)
         {
             ClientController.list(dataGridView1);
+        }
+
+        private void registerToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            SupplierController.startRegister();
         }
     }
 }
