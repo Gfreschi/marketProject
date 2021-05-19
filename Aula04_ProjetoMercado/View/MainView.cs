@@ -35,5 +35,10 @@ namespace Aula04_ProjetoMercado
         {
             SupplierController.startRegister();
         }
+
+        private void registerToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ProductController.startRegister();
+        }
     }
 }
