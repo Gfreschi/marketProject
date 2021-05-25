@@ -121,20 +121,20 @@ namespace Aula04_ProjetoMercado
             // registerToolStripMenuItem1
             // 
             this.registerToolStripMenuItem1.Name = "registerToolStripMenuItem1";
-            this.registerToolStripMenuItem1.Size = new System.Drawing.Size(117, 22);
+            this.registerToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.registerToolStripMenuItem1.Text = "Register";
             this.registerToolStripMenuItem1.Click += new System.EventHandler(this.registerToolStripMenuItem1_Click);
             // 
             // updateToolStripMenuItem1
             // 
             this.updateToolStripMenuItem1.Name = "updateToolStripMenuItem1";
-            this.updateToolStripMenuItem1.Size = new System.Drawing.Size(117, 22);
+            this.updateToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.updateToolStripMenuItem1.Text = "Update";
             // 
             // removeToolStripMenuItem1
             // 
             this.removeToolStripMenuItem1.Name = "removeToolStripMenuItem1";
-            this.removeToolStripMenuItem1.Size = new System.Drawing.Size(117, 22);
+            this.removeToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.removeToolStripMenuItem1.Text = "Remove";
             // 
             // supplierToolStripMenuItem
@@ -150,20 +150,20 @@ namespace Aula04_ProjetoMercado
             // registerToolStripMenuItem2
             // 
             this.registerToolStripMenuItem2.Name = "registerToolStripMenuItem2";
-            this.registerToolStripMenuItem2.Size = new System.Drawing.Size(117, 22);
+            this.registerToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
             this.registerToolStripMenuItem2.Text = "Register";
             this.registerToolStripMenuItem2.Click += new System.EventHandler(this.registerToolStripMenuItem2_Click);
             // 
             // updateToolStripMenuItem2
             // 
             this.updateToolStripMenuItem2.Name = "updateToolStripMenuItem2";
-            this.updateToolStripMenuItem2.Size = new System.Drawing.Size(117, 22);
+            this.updateToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
             this.updateToolStripMenuItem2.Text = "Update";
             // 
             // removeToolStripMenuItem2
             // 
             this.removeToolStripMenuItem2.Name = "removeToolStripMenuItem2";
-            this.removeToolStripMenuItem2.Size = new System.Drawing.Size(117, 22);
+            this.removeToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
             this.removeToolStripMenuItem2.Text = "Remove";
             // 
             // salesToolStripMenuItem
@@ -179,19 +179,20 @@ namespace Aula04_ProjetoMercado
             // registerToolStripMenuItem3
             // 
             this.registerToolStripMenuItem3.Name = "registerToolStripMenuItem3";
-            this.registerToolStripMenuItem3.Size = new System.Drawing.Size(117, 22);
+            this.registerToolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
             this.registerToolStripMenuItem3.Text = "Register";
+            this.registerToolStripMenuItem3.Click += new System.EventHandler(this.registerToolStripMenuItem3_Click);
             // 
             // updateToolStripMenuItem3
             // 
             this.updateToolStripMenuItem3.Name = "updateToolStripMenuItem3";
-            this.updateToolStripMenuItem3.Size = new System.Drawing.Size(117, 22);
+            this.updateToolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
             this.updateToolStripMenuItem3.Text = "Update";
             // 
             // removeToolStripMenuItem3
             // 
             this.removeToolStripMenuItem3.Name = "removeToolStripMenuItem3";
-            this.removeToolStripMenuItem3.Size = new System.Drawing.Size(117, 22);
+            this.removeToolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
             this.removeToolStripMenuItem3.Text = "Remove";
             // 
             // transactionsToolStripMenuItem

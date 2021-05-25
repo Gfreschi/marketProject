@@ -91,9 +91,11 @@
   <ItemGroup>
     <Compile Include="Controller\ClientController.cs" />
     <Compile Include="Controller\ProductController.cs" />
+    <Compile Include="Controller\SaleController.cs" />
     <Compile Include="Controller\SupplierController.cs" />
     <Compile Include="Model\ClientModel.cs" />
     <Compile Include="Model\ProductModel.cs" />
+    <Compile Include="Model\ProductSaleModel.cs" />
     <Compile Include="Model\SalesModel.cs" />
     <Compile Include="Model\SupplierModel.cs" />
     <Compile Include="Settings.cs" />
@@ -130,6 +132,12 @@
     <Compile Include="View\ViewProductRegister.Designer.cs">
       <DependentUpon>ViewProductRegister.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\ViewSaleRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ViewSaleRegister.Designer.cs">
+      <DependentUpon>ViewSaleRegister.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\ViewSupplierRegister.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\ViewProductRegister.resx">
       <DependentUpon>ViewProductRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ViewSaleRegister.resx">
+      <DependentUpon>ViewSaleRegister.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ViewSupplierRegister.resx">
       <DependentUpon>ViewSupplierRegister.cs</DependentUpon>
