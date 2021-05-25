@@ -45,5 +45,10 @@ namespace Aula04_ProjetoMercado
         {
             ClientController.startUpdate();
         }
+
+        private void removeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ClientController.startDelete();
+        }
     }
 }

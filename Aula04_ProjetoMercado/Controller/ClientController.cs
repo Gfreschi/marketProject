@@ -16,6 +16,7 @@ namespace Aula04_ProjetoMercado.Controller
 
         private static ViewClientRegister windowRegisterClient;
         private static ViewClientUpdate windowUpdateClient;
+        private static ViewClientDelete windowDeleteClient;
 
         //Register
         public static void startRegister()
@@ -65,6 +66,7 @@ namespace Aula04_ProjetoMercado.Controller
             }
 
         }
+
         //Update
         public static void startUpdate () 
         {
@@ -111,9 +113,38 @@ namespace Aula04_ProjetoMercado.Controller
         }
 
         //Removal
-        public static void startRemoval () { }
-        public static void closeRemoval () { }
-        public static void remove () { }
+        public static void startDelete ()
+        {
+            windowDeleteClient = new ViewClientDelete();
+            windowDeleteClient.ShowDialog();
+        }
+        public static void closeDelete ()
+        {
+            windowDeleteClient.Close();
+        }
+        public static void delete(int code)
+        {
+            ClientModel deletedClient = new ClientModel();
+
+            deletedClient.Code = code;
+
+            bool success = ClientModel.delete(deletedClient);
+
+            if (success)
+            {
+                closeRegister();
+                System.Windows.Forms.MessageBox.Show(
+                    "Client Successfully Deleted",
+                    "Success");
+            }
+            else
+            {
+                System.Windows.Forms.MessageBox.Show(
+                    "Error deleting client",
+                    "Error");
+
+            }
+        }
 
         //List
         public static void list(System.Windows.Forms.DataGridView visualElement)

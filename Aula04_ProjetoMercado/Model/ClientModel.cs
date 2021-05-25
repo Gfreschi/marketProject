@@ -110,11 +110,19 @@ namespace Aula04_ProjetoMercado.Model
             return database.insert(query, content);
         }
 
-        public static bool remove(ClientModel whichClient)
+        public static bool delete(ClientModel whichClient)
         {
+            marketProject.Utils.DB database = new marketProject.Utils.DB();
 
+            string query = "DELETE FROM client WHERE code=@code";
 
-            return false;
+            List<MySqlParameter> content = new List<MySqlParameter>();
+
+            content.Add(new MySqlParameter("@code", MySqlDbType.Int32));
+
+            content[0].Value = whichClient.code;
+
+            return database.delete(query, content);
         }
 
         public static System.Data.DataTable search()
@@ -123,5 +131,6 @@ namespace Aula04_ProjetoMercado.Model
             string query = "SELECT * FROM client;";
             return database.search(query, null);
         }
+
     }
 }

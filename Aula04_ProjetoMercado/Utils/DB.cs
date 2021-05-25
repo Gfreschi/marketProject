@@ -102,7 +102,7 @@ namespace marketProject.Utils
             return insert(query, parameters);
         }
 
-        public bool remove(string query, List<MySqlParameter> parameters)
+        public bool delete(string query, List<MySqlParameter> parameters)
         {
             return insert(query, parameters);
         }
