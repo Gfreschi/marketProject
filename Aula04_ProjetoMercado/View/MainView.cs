@@ -40,5 +40,10 @@ namespace Aula04_ProjetoMercado
         {
             ProductController.startRegister();
         }
+
+        private void updateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ClientController.startUpdate();
+        }
     }
 }

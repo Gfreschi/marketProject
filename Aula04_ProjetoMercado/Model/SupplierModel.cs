@@ -54,8 +54,6 @@ namespace marketProject.Model
             content.Add(new MySqlParameter("@state", MySqlDbType.String));
             content.Add(new MySqlParameter("@zip", MySqlDbType.String));
             content.Add(new MySqlParameter("@phone", MySqlDbType.String));
-            content.Add(new MySqlParameter("@cpf", MySqlDbType.String));
-            content.Add(new MySqlParameter("@rg", MySqlDbType.String));
 
             content[0].Value = newSupplier.name;
             content[1].Value = newSupplier.address;

@@ -79,9 +79,35 @@ namespace Aula04_ProjetoMercado.Model
 
         public static bool edit(ClientModel whichClient)
         {
+            marketProject.Utils.DB database = new marketProject.Utils.DB();
+
+            string query = "UPDATE client SET name=@EditName, address=@EditAddress, district=@EditDistrict, city=@EditCity, " +
+                            "state=@EditState, zip=@editZip, phone=@editPhone WHERE code=@code";
 
 
-            return false;
+            List<MySqlParameter> content = new List<MySqlParameter>();
+
+            content.Add(new MySqlParameter("@EditName", MySqlDbType.String));
+            content.Add(new MySqlParameter("@EditAddress", MySqlDbType.String));
+            content.Add(new MySqlParameter("@EditDistrict", MySqlDbType.String));
+            content.Add(new MySqlParameter("@EditCity", MySqlDbType.String));
+            content.Add(new MySqlParameter("@EditState", MySqlDbType.String));
+            content.Add(new MySqlParameter("@EditZip", MySqlDbType.String));
+            content.Add(new MySqlParameter("@EditPhone", MySqlDbType.String));
+            content.Add(new MySqlParameter("@code", MySqlDbType.Int32));
+
+            content[0].Value = whichClient.name;
+            content[1].Value = whichClient.address;
+            content[2].Value = whichClient.district;
+            content[3].Value = whichClient.city;
+            content[4].Value = whichClient.state;
+            content[5].Value = whichClient.zip;
+            content[6].Value = whichClient.phone;
+            content[7].Value = whichClient.code;
+
+
+
+            return database.insert(query, content);
         }
 
         public static bool remove(ClientModel whichClient)

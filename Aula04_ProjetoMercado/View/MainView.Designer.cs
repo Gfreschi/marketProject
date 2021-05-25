@@ -44,6 +44,9 @@ namespace Aula04_ProjetoMercado
             this.updateToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.removeToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.salesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registerToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.updateToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.removeToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.transactionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
@@ -87,20 +90,21 @@ namespace Aula04_ProjetoMercado
             // registerToolStripMenuItem
             // 
             this.registerToolStripMenuItem.Name = "registerToolStripMenuItem";
-            this.registerToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.registerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.registerToolStripMenuItem.Text = "Register";
             this.registerToolStripMenuItem.Click += new System.EventHandler(this.registerToolStripMenuItem_Click);
             // 
             // updateToolStripMenuItem
             // 
             this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
-            this.updateToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.updateToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.updateToolStripMenuItem.Text = "Update";
+            this.updateToolStripMenuItem.Click += new System.EventHandler(this.updateToolStripMenuItem_Click);
             // 
             // removeToolStripMenuItem
             // 
             this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
-            this.removeToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.removeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.removeToolStripMenuItem.Text = "Remove";
             // 
             // productsToolStripMenuItem
@@ -116,20 +120,20 @@ namespace Aula04_ProjetoMercado
             // registerToolStripMenuItem1
             // 
             this.registerToolStripMenuItem1.Name = "registerToolStripMenuItem1";
-            this.registerToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.registerToolStripMenuItem1.Size = new System.Drawing.Size(117, 22);
             this.registerToolStripMenuItem1.Text = "Register";
             this.registerToolStripMenuItem1.Click += new System.EventHandler(this.registerToolStripMenuItem1_Click);
             // 
             // updateToolStripMenuItem1
             // 
             this.updateToolStripMenuItem1.Name = "updateToolStripMenuItem1";
-            this.updateToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.updateToolStripMenuItem1.Size = new System.Drawing.Size(117, 22);
             this.updateToolStripMenuItem1.Text = "Update";
             // 
             // removeToolStripMenuItem1
             // 
             this.removeToolStripMenuItem1.Name = "removeToolStripMenuItem1";
-            this.removeToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.removeToolStripMenuItem1.Size = new System.Drawing.Size(117, 22);
             this.removeToolStripMenuItem1.Text = "Remove";
             // 
             // supplierToolStripMenuItem
@@ -163,9 +167,31 @@ namespace Aula04_ProjetoMercado
             // 
             // salesToolStripMenuItem
             // 
+            this.salesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.registerToolStripMenuItem3,
+            this.updateToolStripMenuItem3,
+            this.removeToolStripMenuItem3});
             this.salesToolStripMenuItem.Name = "salesToolStripMenuItem";
             this.salesToolStripMenuItem.Size = new System.Drawing.Size(45, 20);
             this.salesToolStripMenuItem.Text = "Sales";
+            // 
+            // registerToolStripMenuItem3
+            // 
+            this.registerToolStripMenuItem3.Name = "registerToolStripMenuItem3";
+            this.registerToolStripMenuItem3.Size = new System.Drawing.Size(117, 22);
+            this.registerToolStripMenuItem3.Text = "Register";
+            // 
+            // updateToolStripMenuItem3
+            // 
+            this.updateToolStripMenuItem3.Name = "updateToolStripMenuItem3";
+            this.updateToolStripMenuItem3.Size = new System.Drawing.Size(117, 22);
+            this.updateToolStripMenuItem3.Text = "Update";
+            // 
+            // removeToolStripMenuItem3
+            // 
+            this.removeToolStripMenuItem3.Name = "removeToolStripMenuItem3";
+            this.removeToolStripMenuItem3.Size = new System.Drawing.Size(117, 22);
+            this.removeToolStripMenuItem3.Text = "Remove";
             // 
             // transactionsToolStripMenuItem
             // 
@@ -238,6 +264,9 @@ namespace Aula04_ProjetoMercado
         private System.Windows.Forms.ToolStripMenuItem registerToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem removeToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem registerToolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem removeToolStripMenuItem3;
     }
 }
 

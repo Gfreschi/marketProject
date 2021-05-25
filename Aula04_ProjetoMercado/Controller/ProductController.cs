@@ -71,5 +71,6 @@ namespace marketProject.Controller
         {
             visualElement.DataSource = ProductModel.search();
         }
+
     }
 }

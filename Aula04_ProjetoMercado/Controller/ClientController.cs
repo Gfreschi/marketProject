@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Aula04_ProjetoMercado.Model;
 using Aula04_ProjetoMercado.View;
+using marketProject.View;
 
 namespace Aula04_ProjetoMercado.Controller
 {
@@ -14,6 +15,7 @@ namespace Aula04_ProjetoMercado.Controller
 
 
         private static ViewClientRegister windowRegisterClient;
+        private static ViewClientUpdate windowUpdateClient;
 
         //Register
         public static void startRegister()
@@ -64,9 +66,49 @@ namespace Aula04_ProjetoMercado.Controller
 
         }
         //Update
-        public static void startUpdate () { }
-        public static void closeUpdate () { }
-        public static void update () { }
+        public static void startUpdate () 
+        {
+            windowUpdateClient = new ViewClientUpdate();
+            windowUpdateClient.ShowDialog();
+
+        }
+        public static void closeUpdate()
+        {
+            windowUpdateClient.Close();
+        }
+        public static void update(int code, string name, string address, string district,
+                                    string city, string state, string zip, string phone)
+        {
+            ClientModel updatedClient = new ClientModel();
+
+            updatedClient.Code = code;
+            updatedClient.Name = name;
+            updatedClient.Address = address;
+            updatedClient.District = district;
+            updatedClient.City = city;
+            updatedClient.State = state;
+            updatedClient.Zip = zip;
+            updatedClient.Phone = phone;
+            
+
+            bool success = ClientModel.edit(updatedClient);
+
+            if (success)
+            {
+                closeRegister();
+                System.Windows.Forms.MessageBox.Show(
+                    "Client Successfully Updated",
+                    "Success");
+            }
+            else
+            {
+                System.Windows.Forms.MessageBox.Show(
+                    "Error updating client",
+                    "Error");
+
+            }
+
+        }
 
         //Removal
         public static void startRemoval () { }

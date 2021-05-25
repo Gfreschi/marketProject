@@ -20,6 +20,9 @@ namespace marketProject.Model
 
         public DateTime Date { get => date; set => date = value; }
 
-
+        public static bool save(SalesModel newSale)
+        {
+            return false;
+        }
     }
 }

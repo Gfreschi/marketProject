@@ -7,13 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Aula04_ProjetoMercado.Controller;
 using marketProject.Controller;
 
 namespace marketProject.View
 {
-    public partial class ViewSupplierRegister : Form
+    public partial class ViewClientUpdate : Form
     {
-        public ViewSupplierRegister()
+        public ViewClientUpdate()
         {
             InitializeComponent();
         }
@@ -22,16 +23,16 @@ namespace marketProject.View
         {
             try
             {
-                SupplierController.register
-                 (
-                 textBoxName.Text,
-                 textBoxAddress.Text,
-                 textBoxDistrict.Text,
-                 textBoxCity.Text,
-                 textBoxState.Text,
-                 maskedTextBoxZIPCode.Text,
-                 maskedTextBoxPhone.Text
-                 );
+                ClientController.update(
+                System.Convert.ToInt32(textBoxCode.Text),
+                textBoxName.Text,
+                textBoxAddress.Text,
+                textBoxDistrict.Text,
+                textBoxCity.Text,
+                textBoxState.Text,
+                maskedTextBoxZIP.Text,
+                maskedTextBoxPhone.Text
+                );
             }
             catch (Exception error)
             {
@@ -39,13 +40,11 @@ namespace marketProject.View
                     "Data Error: " + error.Message,
                     "Error");
             }
-            
-
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {
-            SupplierController.closeRegister();
+            ClientController.closeUpdate();
         }
     }
 }
