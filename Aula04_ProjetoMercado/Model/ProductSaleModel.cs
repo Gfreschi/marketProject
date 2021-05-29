@@ -23,12 +23,12 @@ namespace marketProject.Model
         public int Amount { get => amount; set => amount = value; }
 
 
-        public static bool save(ProductSaleModel newSale)
+        public static bool saveProductSale(ProductSaleModel newSale)
         {
             marketProject.Utils.DB database = new marketProject.Utils.DB();
 
             string query = "INSERT INTO product_sale (sale_code, product_code, amount) " +
-                            "VALUES (@sale_code, @product_code, @amount";
+                            "VALUES (@sale_code, @product_code, @amount)";
 
             //Building Query preventing SQL Injection
             List<MySqlParameter> content = new List<MySqlParameter>();

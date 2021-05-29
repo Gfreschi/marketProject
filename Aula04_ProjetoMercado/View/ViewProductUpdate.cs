@@ -9,28 +9,27 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using marketProject.Controller;
-
 namespace marketProject.View
 {
-    public partial class ViewSaleRegister : Form
+    public partial class ViewProductUpdate : Form
     {
-        public ViewSaleRegister()
+        public ViewProductUpdate()
         {
             InitializeComponent();
         }
 
-        private void buttoncConfirm_Click(object sender, EventArgs e)
+        private void buttonConfirm_Click(object sender, EventArgs e)
         {
             try
             {
-                SaleController.register(
-                    Convert.ToInt32(textBoxProductCode.Text),
-                    Convert.ToInt32(textBoxClientCode.Text),
-                    Convert.ToInt32(textBoxAmount.Text),
-                    Convert.ToDouble(textBoxPricePaid.Text)
-                    );
-            }
-            catch (Exception error)
+                ProductController.update(
+                Convert.ToInt32(textBoxCode.Text),
+                textBoxName.Text,
+                Convert.ToDouble(textBoxPrice.Text),
+                Convert.ToInt32(textBoxStorage.Text),
+                Convert.ToInt32(textBoxSupplierCode.Text)
+                );
+            }catch (Exception error)
             {
                 System.Windows.Forms.MessageBox.Show(
                     "Data Error: " + error.Message,
@@ -40,7 +39,7 @@ namespace marketProject.View
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {
-            SaleController.closeRegister();
+            ProductController.closeUpdate();
         }
     }
 }

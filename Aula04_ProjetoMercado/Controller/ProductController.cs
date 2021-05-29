@@ -11,6 +11,8 @@ namespace marketProject.Controller
     class ProductController
     {
         private static ViewProductRegister windowRegisterProduct;
+        private static ViewProductUpdate windowUpdateProduct;
+        private static ViewProductDelete windowDeleteProduct;
 
         //Register
         public static void startRegister()
@@ -58,14 +60,77 @@ namespace marketProject.Controller
         }
 
         //Update
-        public static void startUpdate() { }
-        public static void closeUpdate() { }
-        public static void update() { }
+        public static void startUpdate()
+        {
+            windowUpdateProduct = new ViewProductUpdate();
+            windowUpdateProduct.ShowDialog();
+        }
+        public static void closeUpdate()
+        {
+            windowUpdateProduct.Close();
+        }
+        public static void update(int code, string name, double price, int storage, int supplierCode)
+        {
+            ProductModel updatedProduct = new ProductModel();
+
+            updatedProduct.Code = code;
+            updatedProduct.Name = name;
+            updatedProduct.Price = price;
+            updatedProduct.Storage = storage;
+            updatedProduct.SupplierCode = supplierCode;
+
+            //Save the informations
+            bool sucess = ProductModel.edit(updatedProduct);
+
+            if (sucess)
+            {
+                closeRegister();
+                System.Windows.Forms.MessageBox.Show(
+                    "Product Successfully Updated",
+                    "Success");
+            }
+            else
+            {
+                System.Windows.Forms.MessageBox.Show(
+                    "Error updating product",
+                    "Error");
+
+            }
+        }
 
         //Removal
-        public static void startRemoval() { }
-        public static void closeRemoval() { }
-        public static void remove() { }
+        public static void startRemoval()
+        {
+            windowDeleteProduct = new ViewProductDelete();
+            windowDeleteProduct.ShowDialog();
+        }
+        public static void closeRemoval()
+        {
+            windowDeleteProduct.Close();
+        }
+        public static void remove(int code)
+        {
+            ProductModel deletedProduct = new ProductModel();
+
+            deletedProduct.Code = code;
+
+            bool success = ProductModel.delete(deletedProduct);
+
+            if (success)
+            {
+                closeRegister();
+                System.Windows.Forms.MessageBox.Show(
+                    "Product Successfully Deleted",
+                    "Success");
+            }
+            else
+            {
+                System.Windows.Forms.MessageBox.Show(
+                    "Error deleting product",
+                    "Error");
+
+            }
+        }
 
         public static void list(System.Windows.Forms.DataGridView visualElement)
         {

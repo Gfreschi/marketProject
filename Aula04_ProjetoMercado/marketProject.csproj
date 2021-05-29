@@ -126,11 +126,23 @@
     <Compile Include="View\ViewClientUpdate.Designer.cs">
       <DependentUpon>ViewClientUpdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\ViewProductDelete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ViewProductDelete.Designer.cs">
+      <DependentUpon>ViewProductDelete.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\ViewProductRegister.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\ViewProductRegister.Designer.cs">
       <DependentUpon>ViewProductRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ViewProductUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ViewProductUpdate.Designer.cs">
+      <DependentUpon>ViewProductUpdate.cs</DependentUpon>
     </Compile>
     <Compile Include="View\ViewSaleRegister.cs">
       <SubType>Form</SubType>
@@ -138,11 +150,23 @@
     <Compile Include="View\ViewSaleRegister.Designer.cs">
       <DependentUpon>ViewSaleRegister.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\ViewSupplierDelete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ViewSupplierDelete.Designer.cs">
+      <DependentUpon>ViewSupplierDelete.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\ViewSupplierRegister.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\ViewSupplierRegister.Designer.cs">
       <DependentUpon>ViewSupplierRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ViewSupplierUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ViewSupplierUpdate.Designer.cs">
+      <DependentUpon>ViewSupplierUpdate.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -166,14 +190,26 @@
     <EmbeddedResource Include="View\ViewClientUpdate.resx">
       <DependentUpon>ViewClientUpdate.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\ViewProductDelete.resx">
+      <DependentUpon>ViewProductDelete.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\ViewProductRegister.resx">
       <DependentUpon>ViewProductRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ViewProductUpdate.resx">
+      <DependentUpon>ViewProductUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ViewSaleRegister.resx">
       <DependentUpon>ViewSaleRegister.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\ViewSupplierDelete.resx">
+      <DependentUpon>ViewSupplierDelete.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\ViewSupplierRegister.resx">
       <DependentUpon>ViewSupplierRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ViewSupplierUpdate.resx">
+      <DependentUpon>ViewSupplierUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

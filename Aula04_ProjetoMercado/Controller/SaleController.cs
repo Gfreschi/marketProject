@@ -12,7 +12,7 @@ namespace marketProject.Controller
     {
         public static ViewSaleRegister windowRegisterSale;
 
-        //Register
+        //Register'
         public static void startRegister()
         {
             windowRegisterSale = new ViewSaleRegister();
@@ -35,19 +35,20 @@ namespace marketProject.Controller
             newProductSale.PricePaid = pricePaid;
             newProductSale.ClientCode = clientCode;
 
-            bool success = ProductSaleModel.save(newProductSale);
+            bool success = SalesModel.save(newProductSale);
+            bool success1 = ProductSaleModel.saveProductSale(newProductSale);
 
-            if (success)
+            if (success1 && success)
             {
                 closeRegister();
                 System.Windows.Forms.MessageBox.Show(
-                    "Product Sale Successfully Registered",
+                    "Sale Successfully Registered",
                     "Success");
             }
             else
             {
                 System.Windows.Forms.MessageBox.Show(
-                    "Error registering product sale",
+                    "Error registering sale",
                     "Error");
 
             }

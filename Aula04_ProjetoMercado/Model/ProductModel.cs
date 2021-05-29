@@ -39,8 +39,8 @@ namespace marketProject.Model
             marketProject.Utils.DB database = new marketProject.Utils.DB();
 
             string query = "INSERT INTO product (code, name, price, storage, " +
-                            "provider) VALUES (@code, @name, @price, @storage, " +
-                            "@provider);";
+                            "supplier) VALUES (@code, @name, @price, @storage, " +
+                            "@supplier);";
 
             //Building Query preventing SQL Injection
             List<MySqlParameter> content = new List<MySqlParameter>();
@@ -49,7 +49,7 @@ namespace marketProject.Model
             content.Add(new MySqlParameter("@name", MySqlDbType.String));
             content.Add(new MySqlParameter("@price", MySqlDbType.String));
             content.Add(new MySqlParameter("@storage", MySqlDbType.String));
-            content.Add(new MySqlParameter("@provider", MySqlDbType.String));
+            content.Add(new MySqlParameter("@supplier", MySqlDbType.String));
 
             content[0].Value = newProduct.code;
             content[1].Value = newProduct.name;
@@ -62,13 +62,42 @@ namespace marketProject.Model
 
         public static bool edit(ProductModel whichProduct)
         {
-            return true;
+            marketProject.Utils.DB database = new marketProject.Utils.DB();
+
+            string query = "UPDATE product SET name=@EditName, price=@EditPrice, storage=@EditStorage, supplier=@EditSupplier " +
+                            "WHERE code=@code";
+
+            List<MySqlParameter> content = new List<MySqlParameter>();
+
+            content.Add(new MySqlParameter("@EditName", MySqlDbType.String));
+            content.Add(new MySqlParameter("@EditPrice", MySqlDbType.Double));
+            content.Add(new MySqlParameter("@EditStorage", MySqlDbType.String));
+            content.Add(new MySqlParameter("@EditSupplier", MySqlDbType.String));
+            content.Add(new MySqlParameter("@code", MySqlDbType.Int32));
+
+            content[0].Value = whichProduct.name;
+            content[1].Value = whichProduct.price;
+            content[2].Value = whichProduct.storage;
+            content[3].Value = whichProduct.supplierCode;
+            content[4].Value = whichProduct.code;
+
+            return database.insert(query, content);
 
         }
 
-        public static bool remove(ProductModel whichProduct)
+        public static bool delete(ProductModel whichProduct)
         {
-            return true;
+            marketProject.Utils.DB database = new marketProject.Utils.DB();
+
+            string query = "DELETE FROM product WHERE code=@code";
+
+            List<MySqlParameter> content = new List<MySqlParameter>();
+
+            content.Add(new MySqlParameter("@code", MySqlDbType.Int32));
+
+            content[0].Value = whichProduct.code;
+
+            return database.delete(query, content);
         }
 
         public static System.Data.DataTable search()

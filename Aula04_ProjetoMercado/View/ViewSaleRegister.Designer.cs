@@ -92,6 +92,7 @@ namespace marketProject.View
             this.buttonCancel.TabIndex = 5;
             this.buttonCancel.Text = "CANCEL";
             this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // buttoncConfirm
             // 
@@ -101,6 +102,7 @@ namespace marketProject.View
             this.buttoncConfirm.TabIndex = 6;
             this.buttoncConfirm.Text = "CONFIRM";
             this.buttoncConfirm.UseVisualStyleBackColor = true;
+            this.buttoncConfirm.Click += new System.EventHandler(this.buttoncConfirm_Click);
             // 
             // textBoxClientCode
             // 

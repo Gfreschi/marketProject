@@ -7,28 +7,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 using marketProject.Controller;
 
 namespace marketProject.View
 {
-    public partial class ViewSaleRegister : Form
+    public partial class ViewSupplierUpdate : Form
     {
-        public ViewSaleRegister()
+        public ViewSupplierUpdate()
         {
             InitializeComponent();
         }
 
-        private void buttoncConfirm_Click(object sender, EventArgs e)
+        private void buttonConfirm_Click(object sender, EventArgs e)
         {
             try
             {
-                SaleController.register(
-                    Convert.ToInt32(textBoxProductCode.Text),
-                    Convert.ToInt32(textBoxClientCode.Text),
-                    Convert.ToInt32(textBoxAmount.Text),
-                    Convert.ToDouble(textBoxPricePaid.Text)
-                    );
+                SupplierController.update
+                 (
+                 Convert.ToInt32(textBoxCode.Text),
+                 textBoxName.Text,
+                 textBoxAddress.Text,
+                 textBoxDistrict.Text,
+                 textBoxCity.Text,
+                 textBoxState.Text,
+                 maskedTextBoxZIPCode.Text,
+                 maskedTextBoxPhone.Text
+                 );
             }
             catch (Exception error)
             {
@@ -40,7 +44,7 @@ namespace marketProject.View
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {
-            SaleController.closeRegister();
+            SupplierController.closeUpdate();
         }
     }
 }

@@ -40,7 +40,7 @@ namespace marketProject.Model
         {
             marketProject.Utils.DB database = new marketProject.Utils.DB();
 
-            string query = "INSERT INTO provider (name, address, district, city, state, zip, " +
+            string query = "INSERT INTO supplier (name, address, district, city, state, zip, " +
                             "phone) VALUES (@name, @address, @district, @city, " +
                             "@state, @zip, @phone);";
 
@@ -68,19 +68,55 @@ namespace marketProject.Model
 
         public static bool edit(SupplierModel whichSupplier)
         {
-            return true;
+            marketProject.Utils.DB database = new marketProject.Utils.DB();
+
+            string query = "UPDATE supplier SET name=@EditName, address=@EditAddress, district=@EditDistrict, city=@EditCity, " +
+                            "state=@EditState, zip=@editZip, phone=@editPhone WHERE code=@code";
+
+
+            List<MySqlParameter> content = new List<MySqlParameter>();
+
+            content.Add(new MySqlParameter("@EditName", MySqlDbType.String));
+            content.Add(new MySqlParameter("@EditAddress", MySqlDbType.String));
+            content.Add(new MySqlParameter("@EditDistrict", MySqlDbType.String));
+            content.Add(new MySqlParameter("@EditCity", MySqlDbType.String));
+            content.Add(new MySqlParameter("@EditState", MySqlDbType.String));
+            content.Add(new MySqlParameter("@EditZip", MySqlDbType.String));
+            content.Add(new MySqlParameter("@EditPhone", MySqlDbType.String));
+            content.Add(new MySqlParameter("@code", MySqlDbType.Int32));
+
+            content[0].Value = whichSupplier.name;
+            content[1].Value = whichSupplier.address;
+            content[2].Value = whichSupplier.district;
+            content[3].Value = whichSupplier.city;
+            content[4].Value = whichSupplier.state;
+            content[5].Value = whichSupplier.zip;
+            content[6].Value = whichSupplier.phone;
+            content[7].Value = whichSupplier.code;
+
+
+            return database.insert(query, content);
         }
 
-        public static bool remove(SupplierModel whichSupplier)
+        public static bool delete(SupplierModel whichSupplier)
         {
-            return true;
+            marketProject.Utils.DB database = new marketProject.Utils.DB();
+
+            string query = "DELETE FROM supplier WHERE code=@code";
+
+            List<MySqlParameter> content = new List<MySqlParameter>();
+
+            content.Add(new MySqlParameter("@code", MySqlDbType.Int32));
+
+            content[0].Value = whichSupplier.code;
+
+            return database.delete(query, content);
         }
 
         public static System.Data.DataTable search()
         {
-            //In database I am using diferent name for supplier, (provider).
             marketProject.Utils.DB database = new marketProject.Utils.DB();
-            string query = "SELECT * FROM provider;";
+            string query = "SELECT * FROM supplier;";
             return database.search(query, null);
         }
     }

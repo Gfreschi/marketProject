@@ -53,7 +53,27 @@ namespace Aula04_ProjetoMercado
 
         private void registerToolStripMenuItem3_Click(object sender, EventArgs e)
         {
+            SaleController.startRegister();
+        }
 
+        private void updateToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ProductController.startUpdate();
+        }
+
+        private void removeToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ProductController.startRemoval();
+        }
+
+        private void updateToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            SupplierController.startUpdate();
+        }
+
+        private void removeToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            SupplierController.startRemoval();
         }
     }
 }
