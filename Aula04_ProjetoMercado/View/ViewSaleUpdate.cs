@@ -11,20 +11,28 @@ using marketProject.Controller;
 
 namespace marketProject.View
 {
-    public partial class ViewSupplierDelete : Form
+    public partial class ViewSaleUpdate : Form
     {
-        public ViewSupplierDelete()
+        public ViewSaleUpdate()
         {
             InitializeComponent();
         }
 
-        private void buttonConfirm_Click(object sender, EventArgs e)
+        private void buttoncConfirm_Click(object sender, EventArgs e)
         {
+
             try
             {
-                SupplierController.remove(Convert.ToInt32(textBoxCode.Text));
+                SaleController.update(
+                Convert.ToInt32(textBoxSaleCode.Text),
+                Convert.ToInt32(textBoxProductCode.Text),
+                Convert.ToInt32(textBoxClientCode.Text),
+                Convert.ToInt32(textBoxAmount.Text),
+                Convert.ToDouble(textBoxPricePaid.Text)
+                );
 
-            } catch (Exception error)
+            }
+            catch (Exception error)
             {
                 System.Windows.Forms.MessageBox.Show(
                     "Data Error: " + error.Message,
@@ -35,7 +43,7 @@ namespace marketProject.View
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {
-            SupplierController.closeRemoval();
+            SaleController.closeUpdate();
         }
     }
 }

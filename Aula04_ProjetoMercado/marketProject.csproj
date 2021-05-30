@@ -144,11 +144,23 @@
     <Compile Include="View\ViewProductUpdate.Designer.cs">
       <DependentUpon>ViewProductUpdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\ViewSaleDelete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ViewSaleDelete.Designer.cs">
+      <DependentUpon>ViewSaleDelete.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\ViewSaleRegister.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\ViewSaleRegister.Designer.cs">
       <DependentUpon>ViewSaleRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ViewSaleUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ViewSaleUpdate.Designer.cs">
+      <DependentUpon>ViewSaleUpdate.cs</DependentUpon>
     </Compile>
     <Compile Include="View\ViewSupplierDelete.cs">
       <SubType>Form</SubType>
@@ -199,8 +211,14 @@
     <EmbeddedResource Include="View\ViewProductUpdate.resx">
       <DependentUpon>ViewProductUpdate.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\ViewSaleDelete.resx">
+      <DependentUpon>ViewSaleDelete.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\ViewSaleRegister.resx">
       <DependentUpon>ViewSaleRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ViewSaleUpdate.resx">
+      <DependentUpon>ViewSaleUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ViewSupplierDelete.resx">
       <DependentUpon>ViewSupplierDelete.cs</DependentUpon>

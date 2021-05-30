@@ -51,6 +51,9 @@ namespace Aula04_ProjetoMercado
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.buttonListProducts = new System.Windows.Forms.Button();
+            this.buttonListSuppliers = new System.Windows.Forms.Button();
+            this.buttonListSales = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -121,21 +124,21 @@ namespace Aula04_ProjetoMercado
             // registerToolStripMenuItem1
             // 
             this.registerToolStripMenuItem1.Name = "registerToolStripMenuItem1";
-            this.registerToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.registerToolStripMenuItem1.Size = new System.Drawing.Size(117, 22);
             this.registerToolStripMenuItem1.Text = "Register";
             this.registerToolStripMenuItem1.Click += new System.EventHandler(this.registerToolStripMenuItem1_Click);
             // 
             // updateToolStripMenuItem1
             // 
             this.updateToolStripMenuItem1.Name = "updateToolStripMenuItem1";
-            this.updateToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.updateToolStripMenuItem1.Size = new System.Drawing.Size(117, 22);
             this.updateToolStripMenuItem1.Text = "Update";
             this.updateToolStripMenuItem1.Click += new System.EventHandler(this.updateToolStripMenuItem1_Click);
             // 
             // removeToolStripMenuItem1
             // 
             this.removeToolStripMenuItem1.Name = "removeToolStripMenuItem1";
-            this.removeToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.removeToolStripMenuItem1.Size = new System.Drawing.Size(117, 22);
             this.removeToolStripMenuItem1.Text = "Remove";
             this.removeToolStripMenuItem1.Click += new System.EventHandler(this.removeToolStripMenuItem1_Click);
             // 
@@ -159,14 +162,14 @@ namespace Aula04_ProjetoMercado
             // updateToolStripMenuItem2
             // 
             this.updateToolStripMenuItem2.Name = "updateToolStripMenuItem2";
-            this.updateToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.updateToolStripMenuItem2.Size = new System.Drawing.Size(117, 22);
             this.updateToolStripMenuItem2.Text = "Update";
             this.updateToolStripMenuItem2.Click += new System.EventHandler(this.updateToolStripMenuItem2_Click);
             // 
             // removeToolStripMenuItem2
             // 
             this.removeToolStripMenuItem2.Name = "removeToolStripMenuItem2";
-            this.removeToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.removeToolStripMenuItem2.Size = new System.Drawing.Size(117, 22);
             this.removeToolStripMenuItem2.Text = "Remove";
             this.removeToolStripMenuItem2.Click += new System.EventHandler(this.removeToolStripMenuItem2_Click);
             // 
@@ -183,21 +186,23 @@ namespace Aula04_ProjetoMercado
             // registerToolStripMenuItem3
             // 
             this.registerToolStripMenuItem3.Name = "registerToolStripMenuItem3";
-            this.registerToolStripMenuItem3.Size = new System.Drawing.Size(117, 22);
+            this.registerToolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
             this.registerToolStripMenuItem3.Text = "Register";
             this.registerToolStripMenuItem3.Click += new System.EventHandler(this.registerToolStripMenuItem3_Click);
             // 
             // updateToolStripMenuItem3
             // 
             this.updateToolStripMenuItem3.Name = "updateToolStripMenuItem3";
-            this.updateToolStripMenuItem3.Size = new System.Drawing.Size(117, 22);
+            this.updateToolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
             this.updateToolStripMenuItem3.Text = "Update";
+            this.updateToolStripMenuItem3.Click += new System.EventHandler(this.updateToolStripMenuItem3_Click);
             // 
             // removeToolStripMenuItem3
             // 
             this.removeToolStripMenuItem3.Name = "removeToolStripMenuItem3";
-            this.removeToolStripMenuItem3.Size = new System.Drawing.Size(117, 22);
+            this.removeToolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
             this.removeToolStripMenuItem3.Text = "Remove";
+            this.removeToolStripMenuItem3.Click += new System.EventHandler(this.removeToolStripMenuItem3_Click);
             // 
             // transactionsToolStripMenuItem
             // 
@@ -217,7 +222,7 @@ namespace Aula04_ProjetoMercado
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(147, 52);
             this.button1.TabIndex = 1;
-            this.button1.Text = "List Client";
+            this.button1.Text = "List Clients";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -229,11 +234,44 @@ namespace Aula04_ProjetoMercado
             this.dataGridView1.Size = new System.Drawing.Size(623, 389);
             this.dataGridView1.TabIndex = 2;
             // 
+            // buttonListProducts
+            // 
+            this.buttonListProducts.Location = new System.Drawing.Point(12, 107);
+            this.buttonListProducts.Name = "buttonListProducts";
+            this.buttonListProducts.Size = new System.Drawing.Size(147, 52);
+            this.buttonListProducts.TabIndex = 3;
+            this.buttonListProducts.Text = "List Products";
+            this.buttonListProducts.UseVisualStyleBackColor = true;
+            this.buttonListProducts.Click += new System.EventHandler(this.buttonListProducts_Click);
+            // 
+            // buttonListSuppliers
+            // 
+            this.buttonListSuppliers.Location = new System.Drawing.Point(12, 165);
+            this.buttonListSuppliers.Name = "buttonListSuppliers";
+            this.buttonListSuppliers.Size = new System.Drawing.Size(147, 52);
+            this.buttonListSuppliers.TabIndex = 4;
+            this.buttonListSuppliers.Text = "List Suppliers";
+            this.buttonListSuppliers.UseVisualStyleBackColor = true;
+            this.buttonListSuppliers.Click += new System.EventHandler(this.buttonListSuppliers_Click);
+            // 
+            // buttonListSales
+            // 
+            this.buttonListSales.Location = new System.Drawing.Point(12, 223);
+            this.buttonListSales.Name = "buttonListSales";
+            this.buttonListSales.Size = new System.Drawing.Size(147, 52);
+            this.buttonListSales.TabIndex = 5;
+            this.buttonListSales.Text = "List Sales";
+            this.buttonListSales.UseVisualStyleBackColor = true;
+            this.buttonListSales.Click += new System.EventHandler(this.buttonListSales_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonListSales);
+            this.Controls.Add(this.buttonListSuppliers);
+            this.Controls.Add(this.buttonListProducts);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.menuStrip1);
@@ -273,6 +311,9 @@ namespace Aula04_ProjetoMercado
         private System.Windows.Forms.ToolStripMenuItem registerToolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem removeToolStripMenuItem3;
+        private System.Windows.Forms.Button buttonListProducts;
+        private System.Windows.Forms.Button buttonListSuppliers;
+        private System.Windows.Forms.Button buttonListSales;
     }
 }
 

@@ -11,31 +11,31 @@ using marketProject.Controller;
 
 namespace marketProject.View
 {
-    public partial class ViewSupplierDelete : Form
+    public partial class ViewSaleDelete : Form
     {
-        public ViewSupplierDelete()
+        public ViewSaleDelete()
         {
             InitializeComponent();
         }
 
-        private void buttonConfirm_Click(object sender, EventArgs e)
+        private void buttoncConfirm_Click(object sender, EventArgs e)
         {
             try
             {
-                SupplierController.remove(Convert.ToInt32(textBoxCode.Text));
+                SaleController.remove(Convert.ToInt32(textBoxSaleCode.Text));
 
-            } catch (Exception error)
+            }
+            catch (Exception error)
             {
                 System.Windows.Forms.MessageBox.Show(
                     "Data Error: " + error.Message,
                     "Error");
             }
-            
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {
-            SupplierController.closeRemoval();
+            SaleController.closeRemoval();
         }
     }
 }

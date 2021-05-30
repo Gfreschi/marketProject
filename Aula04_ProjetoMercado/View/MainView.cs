@@ -75,5 +75,30 @@ namespace Aula04_ProjetoMercado
         {
             SupplierController.startRemoval();
         }
+
+        private void buttonListProducts_Click(object sender, EventArgs e)
+        {
+            ProductController.list(dataGridView1);
+        }
+
+        private void buttonListSuppliers_Click(object sender, EventArgs e)
+        {
+            SupplierController.list(dataGridView1);
+        }
+
+        private void buttonListSales_Click(object sender, EventArgs e)
+        {
+            SaleController.list(dataGridView1);
+        }
+
+        private void updateToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            SaleController.startUpdate();
+        }
+
+        private void removeToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            SaleController.startRemoval();
+        }
     }
 }
