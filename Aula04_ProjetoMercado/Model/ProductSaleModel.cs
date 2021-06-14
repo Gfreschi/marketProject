@@ -28,30 +28,26 @@ namespace marketProject.Model
 
         public ProductSaleModel()
         {
-            productSaleCode++;
+            //productSaleCode++;
         }
 
         public static bool saveProductSale(ProductSaleModel newSale)
         {
             marketProject.Utils.DB database = new marketProject.Utils.DB();
 
-            newSale.saleCode = newSale.code;
-
-            string query = "INSERT INTO product_sale (code, sale_code, product_code, amount) " +
-                            "VALUES (@productSaleCode, @sale_code, @product_code, @amount)";
+            string query = "INSERT INTO product_sale (sale_code, product_code, amount) " +
+                            "VALUES (@sale_code, @product_code, @amount);";
 
             //Building Query preventing SQL Injection
             List<MySqlParameter> content = new List<MySqlParameter>();
 
-            content.Add(new MySqlParameter("@productSaleCode", MySqlDbType.String));
             content.Add(new MySqlParameter("@sale_code", MySqlDbType.String));
             content.Add(new MySqlParameter("@product_code", MySqlDbType.String));
             content.Add(new MySqlParameter("@amount", MySqlDbType.String));
 
-            content[0].Value = newSale.productSaleCode;
-            content[1].Value = newSale.SaleCode;
-            content[2].Value = newSale.ProductCode;
-            content[3].Value = newSale.Amount;
+            content[0].Value = newSale.SaleCode;
+            content[1].Value = newSale.ProductCode;
+            content[2].Value = newSale.Amount;
 
             return database.insert(query, content);
         }
@@ -106,3 +102,4 @@ namespace marketProject.Model
         }
     }
 }
+

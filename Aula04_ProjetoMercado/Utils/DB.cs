@@ -36,13 +36,13 @@ namespace marketProject.Utils
                 connection.Open();
                 return true;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 //Error 
                 System.Windows.Forms.MessageBox.Show("ERROR when opening connection: " + ex.Message + "Error.");
                 return false;
             }
-            
+
         }
         private bool closeConnection()
         {
@@ -58,8 +58,49 @@ namespace marketProject.Utils
                 return false;
             }
         }
+        // TESTE UNITÁRIO
+        // true = insert("INSERT INTO cliente VALUES (1, 'Tiago')");
+        // Verificação do teste ASSERT(true, insert);
+
+        // false = insert("INSERT INTO cliente VALUES (1, 'Tiago')");
+        // Verificação do teste ASSERT(false, insert);
 
         //Handling w/ DB
+        public int insert_return_id(string query, List<MySqlParameter> parameters)
+        {
+            //Insert INTO client (code, value) VALUES (__, __)
+            try
+            {
+                if (openConnection()) //Connection true
+                {
+                    MySqlCommand cmd = new MySqlCommand(query, connection);
+
+                    if (parameters != null)
+                        for (int i = 0; i < parameters.Count; i++)
+                            cmd.Parameters.Add(parameters[i]);
+
+                    int response = cmd.ExecuteNonQuery();
+
+                    int last_id = (int)cmd.LastInsertedId;
+
+                    Console.WriteLine("Insert response: " + response);
+
+                    closeConnection();
+
+                    if (response != 0) // Não teve erros...
+                        return last_id;
+                    return -1;
+                }
+
+                return -1;
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show("Error on MySQL: " + ex.Message, "Error");
+                return -1;
+            }
+        }
+
         public bool insert(string query, List<MySqlParameter> parameters)
         {
             //Insert INTO client (code, value) VALUES (__, __)
@@ -74,6 +115,8 @@ namespace marketProject.Utils
                             cmd.Parameters.Add(parameters[i]);
 
                     int response = cmd.ExecuteNonQuery();
+
+                    // cmd.LastInsertedId
 
                     Console.WriteLine("Insert response: " + response);
 
@@ -94,7 +137,7 @@ namespace marketProject.Utils
                 return false;
             }
 
-            
+
         }
 
         public bool update(string query, List<MySqlParameter> parameters)
@@ -164,7 +207,7 @@ namespace marketProject.Utils
                 else
                     return null;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 System.Windows.Forms.MessageBox.Show("ERROR MySQL: " + ex.Message, "Error");
                 return null;

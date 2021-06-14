@@ -54,6 +54,9 @@ namespace Aula04_ProjetoMercado
             this.buttonListProducts = new System.Windows.Forms.Button();
             this.buttonListSuppliers = new System.Windows.Forms.Button();
             this.buttonListSales = new System.Windows.Forms.Button();
+            this.missImplementationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hELPToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.notImplementedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -76,6 +79,8 @@ namespace Aula04_ProjetoMercado
             // 
             // filesToolStripMenuItem
             // 
+            this.filesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.missImplementationToolStripMenuItem});
             this.filesToolStripMenuItem.Name = "filesToolStripMenuItem";
             this.filesToolStripMenuItem.Size = new System.Drawing.Size(42, 20);
             this.filesToolStripMenuItem.Text = "Files";
@@ -206,12 +211,16 @@ namespace Aula04_ProjetoMercado
             // 
             // transactionsToolStripMenuItem
             // 
+            this.transactionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.notImplementedToolStripMenuItem});
             this.transactionsToolStripMenuItem.Name = "transactionsToolStripMenuItem";
             this.transactionsToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.transactionsToolStripMenuItem.Text = "Reports";
             // 
             // helpToolStripMenuItem
             // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.hELPToolStripMenuItem1});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
@@ -264,6 +273,24 @@ namespace Aula04_ProjetoMercado
             this.buttonListSales.UseVisualStyleBackColor = true;
             this.buttonListSales.Click += new System.EventHandler(this.buttonListSales_Click);
             // 
+            // missImplementationToolStripMenuItem
+            // 
+            this.missImplementationToolStripMenuItem.Name = "missImplementationToolStripMenuItem";
+            this.missImplementationToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.missImplementationToolStripMenuItem.Text = "Miss implementation";
+            // 
+            // hELPToolStripMenuItem1
+            // 
+            this.hELPToolStripMenuItem1.Name = "hELPToolStripMenuItem1";
+            this.hELPToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.hELPToolStripMenuItem1.Text = "HELP!";
+            // 
+            // notImplementedToolStripMenuItem
+            // 
+            this.notImplementedToolStripMenuItem.Name = "notImplementedToolStripMenuItem";
+            this.notImplementedToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.notImplementedToolStripMenuItem.Text = "Not implemented";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -314,6 +341,9 @@ namespace Aula04_ProjetoMercado
         private System.Windows.Forms.Button buttonListProducts;
         private System.Windows.Forms.Button buttonListSuppliers;
         private System.Windows.Forms.Button buttonListSales;
+        private System.Windows.Forms.ToolStripMenuItem missImplementationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem notImplementedToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem hELPToolStripMenuItem1;
     }
 }
 

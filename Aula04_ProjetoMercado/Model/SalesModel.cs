@@ -27,14 +27,14 @@ namespace marketProject.Model
         public SalesModel()
         {
             date = DateTime.Now;
-            code++;
+            //code++;
         }
-        public static bool save(SalesModel newSale)
+        public static int save(SalesModel newSale)
         {
             marketProject.Utils.DB database = new marketProject.Utils.DB();
 
-            string query = "INSERT INTO sale (code, date, client_code, price_paid) " +
-                            "VALUES (@code, @date, @client_code, @price_paid)";
+            string query = "INSERT INTO sale (date, client_code, price_paid) " +
+                            "VALUES (@date, @client_code, @price_paid);";
 
             //Formating DateTime for Mysql format
             string formatForMySql = newSale.date.ToString("yyyy-MM-dd HH:mm:ss");
@@ -42,18 +42,15 @@ namespace marketProject.Model
             //Building Query preventing SQL Injection
             List<MySqlParameter> content = new List<MySqlParameter>();
 
-            content.Add(new MySqlParameter("@code", MySqlDbType.String));
             content.Add(new MySqlParameter("@date", MySqlDbType.String));
             content.Add(new MySqlParameter("@client_code", MySqlDbType.String));
             content.Add(new MySqlParameter("@price_paid", MySqlDbType.String));
 
-            content[0].Value = newSale.code;
-            content[1].Value = newSale.date;
-            content[2].Value = newSale.clientCode;
-            content[3].Value = newSale.pricePaid;
+            content[0].Value = newSale.date;
+            content[1].Value = newSale.clientCode;
+            content[2].Value = newSale.pricePaid;
 
-            return database.insert(query, content);
-
+            return database.insert_return_id(query, content);
         }
 
         public static bool edit(SalesModel updatedSale)
@@ -68,10 +65,9 @@ namespace marketProject.Model
             content.Add(new MySqlParameter("@Editprice_paid", MySqlDbType.String));
             content.Add(new MySqlParameter("@code", MySqlDbType.String));
 
-
             content[0].Value = updatedSale.clientCode;
             content[1].Value = updatedSale.pricePaid;
-            content[3].Value = updatedSale.code;
+            content[2].Value = updatedSale.code;
 
             return database.insert(query, content);
         }
