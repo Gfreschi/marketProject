@@ -100,5 +100,15 @@ namespace Aula04_ProjetoMercado
         {
             SaleController.startRemoval();
         }
+
+        private void transactionsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReportController.startReport();
+        }
+
+        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            HelpController.startHelp();
+        }
     }
 }

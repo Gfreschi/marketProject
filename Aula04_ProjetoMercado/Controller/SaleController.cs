@@ -34,7 +34,7 @@ namespace marketProject.Controller
             int success_insert_id = SalesModel.save(newSale); // return the id of the last saved sale
 
             ProductSaleModel newProductSale = new ProductSaleModel();
-            // Antes de atribuir, verificar se não é -1
+            
             newProductSale.SaleCode = success_insert_id;
 
             newProductSale.ProductCode = productCode;
@@ -79,20 +79,7 @@ namespace marketProject.Controller
 
             bool success = SalesModel.edit(updatedSale);
 
-
-            /*ProductSaleModel updatedSale = new ProductSaleModel();
-
-            updatedSale.SaleCode = saleCode;
-            updatedSale.ProductSaleCode = saleCode;
-            updatedSale.ProductCode = productCode;
-            updatedSale.ClientCode = clientCode;
-            updatedSale.Amount = amount;
-            updatedSale.PricePaid = pricePaid;
-
-            bool success = SalesModel.edit(updatedSale);
-            bool success1 = ProductSaleModel.editProductSale(updatedSale);*/
-
-            if (success) // && success1)
+            if (success)
             {
                 closeUpdate();
                 System.Windows.Forms.MessageBox.Show(
@@ -109,6 +96,7 @@ namespace marketProject.Controller
 
         }
 
+        //Delete
         public static void startRemoval()
         {
             windowDeleteSale = new ViewSaleDelete();
@@ -145,6 +133,7 @@ namespace marketProject.Controller
             }
         }
 
+        //Select
         public static void list(System.Windows.Forms.DataGridView visualElement)
         {
             visualElement.DataSource = ProductSaleModel.searchAll();

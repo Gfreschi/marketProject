@@ -97,7 +97,7 @@ namespace Aula04_ProjetoMercado.Controller
 
             if (success)
             {
-                closeRegister();
+                closeUpdate();
                 System.Windows.Forms.MessageBox.Show(
                     "Client Successfully Updated",
                     "Success");
@@ -132,7 +132,7 @@ namespace Aula04_ProjetoMercado.Controller
 
             if (success)
             {
-                closeRegister();
+                closeDelete();
                 System.Windows.Forms.MessageBox.Show(
                     "Client Successfully Deleted",
                     "Success");

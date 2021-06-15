@@ -27,7 +27,6 @@ namespace marketProject.Model
         public SalesModel()
         {
             date = DateTime.Now;
-            //code++;
         }
         public static int save(SalesModel newSale)
         {

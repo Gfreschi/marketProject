@@ -28,7 +28,6 @@ namespace marketProject.Model
 
         public ProductSaleModel()
         {
-            //productSaleCode++;
         }
 
         public static bool saveProductSale(ProductSaleModel newSale)

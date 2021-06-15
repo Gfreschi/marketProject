@@ -58,12 +58,6 @@ namespace marketProject.Utils
                 return false;
             }
         }
-        // TESTE UNITÁRIO
-        // true = insert("INSERT INTO cliente VALUES (1, 'Tiago')");
-        // Verificação do teste ASSERT(true, insert);
-
-        // false = insert("INSERT INTO cliente VALUES (1, 'Tiago')");
-        // Verificação do teste ASSERT(false, insert);
 
         //Handling w/ DB
         public int insert_return_id(string query, List<MySqlParameter> parameters)
@@ -87,7 +81,7 @@ namespace marketProject.Utils
 
                     closeConnection();
 
-                    if (response != 0) // Não teve erros...
+                    if (response != 0)
                         return last_id;
                     return -1;
                 }

@@ -94,7 +94,7 @@ namespace marketProject.Controller
 
             if (sucess)
             {
-                closeRegister();
+                closeUpdate();
                 System.Windows.Forms.MessageBox.Show(
                     "Supplier Successfully Updated",
                     "Success");
@@ -129,7 +129,7 @@ namespace marketProject.Controller
 
             if (sucess)
             {
-                closeRegister();
+                closeRemoval();
                 System.Windows.Forms.MessageBox.Show(
                     "Supplier Successfully Deleted",
                     "Success");
@@ -144,6 +144,7 @@ namespace marketProject.Controller
 
         }
 
+        //Select
         public static void list(System.Windows.Forms.DataGridView visualElement)
         {
             visualElement.DataSource = SupplierModel.search();
