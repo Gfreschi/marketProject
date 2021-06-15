@@ -35,6 +35,27 @@ namespace Aula04_ProjetoMercado.View
                 maskedTextBoxCPF.Text,
                 textBoxRG.Text
                 );
+
+            //Unit Test
+            /*try
+            {
+                ClientController.register("Gabriel", "Rua 7", "Santana", "RC", "SP", "13504000", "19999999", "1", "123456789");
+                ClientController.register("Gabriel", "Rua 7", "Santana", "RC", "SP", "13504000", "19999999", "2", "123456789");
+                ClientController.register("Gabriel", "Rua 7", "Santana", "RC", "SP", "13504000", "19999999", "3", "123456789");
+                ClientController.register("Gabriel", "Rua 7", "Santana", "RC", "SP", "13504000", "19999999", "4", "123456789");
+                ClientController.register("Gabriel", "Rua 7", "Santana", "RC", "SP", "13504000", "19999999", "5", "123456789");
+                ClientController.register("Gabriel", "Rua 7", "Santana", "RC", "SP", "13504000", "19999999", "6", "123456789");
+                ClientController.register("Gabriel", "Rua 7", "Santana", "RC", "SP", "13504000", "19999999", "7", "123456789");
+                ClientController.register("Gabriel", "Rua 7", "Santana", "RC", "SP", "13504000", "19999999", "8", "123456789");
+
+            } catch (Exception error)
+            {
+                System.Windows.Forms.MessageBox.Show(
+                    "Data Error: " + error.Message,
+                    "Error");
+            }
+            */
+            
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
