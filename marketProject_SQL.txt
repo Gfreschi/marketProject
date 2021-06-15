@@ -1,0 +1,67 @@
+DROP DATABASE IF EXISTS market;
+CREATE DATABASE market;
+SET @@time_zone = 'SYSTEM';
+
+USE market;
+
+CREATE TABLE client
+(
+	code INT PRIMARY KEY AUTO_INCREMENT,
+	name VARCHAR(255),
+	address VARCHAR(255),
+	district VARCHAR(60),
+	city VARCHAR(60),
+	state VARCHAR(2),
+	zip VARCHAR(10),
+	phone VARCHAR(20),
+	cpf VARCHAR(11) UNIQUE NOT NULL,
+	rg VARCHAR(10)
+);
+
+CREATE TABLE supplier
+(
+	code INT PRIMARY KEY AUTO_INCREMENT,
+	name VARCHAR(255),
+	address VARCHAR(255),
+	district VARCHAR(60),
+	city VARCHAR(60),
+	state VARCHAR(2),
+	zip VARCHAR(10),
+	phone VARCHAR(20)
+    
+);
+
+CREATE TABLE product
+(
+	code INT PRIMARY KEY,
+	name VARCHAR(255),
+	price DOUBLE,
+	storage INT,
+
+	supplier INT,
+
+	FOREIGN KEY (supplier) REFERENCES 
+    supplier
+    	(code) ON DELETE SET NULL ON UPDATE CASCADE
+);
+
+CREATE TABLE sale
+(
+	code INT PRIMARY KEY AUTO_INCREMENT,
+	date DATETIME,
+	client_code INT,
+	price_paid DOUBLE,
+
+	FOREIGN KEY (client_code) REFERENCES client (code) ON DELETE SET NULL ON UPDATE CASCADE
+);
+
+CREATE TABLE product_sale
+(
+	code INT PRIMARY KEY AUTO_INCREMENT,
+	amount INT,
+	sale_code INT,
+	product_code INT,
+	
+	FOREIGN KEY (sale_code) REFERENCES sale (code) ON DELETE SET NULL ON UPDATE CASCADE,
+	FOREIGN KEY (product_code) REFERENCES product (code) ON DELETE SET NULL ON UPDATE CASCADE
+); 
